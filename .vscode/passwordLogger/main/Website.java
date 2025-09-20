@@ -1,4 +1,4 @@
-package passwordLogger;
+package passwordLogger.main;
 
 public class Website {
       

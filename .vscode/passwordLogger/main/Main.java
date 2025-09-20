@@ -1,4 +1,4 @@
-package passwordLogger;
+package passwordLogger.main;
 import java.util.Random;
 import java.util.Scanner;
 public class Main{
