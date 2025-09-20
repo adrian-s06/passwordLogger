@@ -1,3 +1,5 @@
+package passwordLogger;
+
 public class Website {
       
     private String webUrl, webUsername, webPassword;
