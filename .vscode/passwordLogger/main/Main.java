@@ -39,9 +39,14 @@ public class Main{
             }
 
         //password randomiser
-        // for (int i = 0; i < passLength; i++) {
-        //     password[i] =
-        // }
+            for (int i = 0; i < passLength; i++) {
+                char tempVal = password[i];
+                int randIndex = rand.nextInt(passLength);
+
+                password[i] = password[randIndex];
+                password[randIndex] = tempVal;
+                
+            }
 
         String finPassword = String.valueOf(password);
         System.out.println("The password that is generated is: " + finPassword);
