@@ -28,10 +28,10 @@ public class Main{
         //password generator
             char[] password = new char[passLength];
             
-            password[0] = (char) (rand.nextInt(26) + 64); // capital
-            password[1] = (char) (rand.nextInt(26) + 96); // lower case
-            password[2] = (char) rand.nextInt(9); // number
-            password[3] = (char) (rand.nextInt()); // symbol
+            password[0] = (char) (rand.nextInt(26) + 63); // capital
+            password[1] = (char) (rand.nextInt(26) + 95); // lower case
+            password[2] = (char) (rand.nextInt(9) + 47);// number
+            password[3] = (char) (rand.nextInt(15) + 33); // symbol
 
             for (int i = 4; i < passLength; i++) {
                 password[i] = (char) (rand.nextInt(94) + 32);
