@@ -39,12 +39,18 @@ public class Main{
             }
 
         //password randomiser
-        
-        
+        // for (int i = 0; i < passLength; i++) {
+        //     password[i] =
+        // }
+
+        String finPassword = String.valueOf(password);
+        System.out.println("The password that is generated is: " + finPassword);
+        // TODO: System.out.println("Do you wish to continue? Type Y or N to confirm:");
+
         // prepping website instance
             String url = scnr.nextLine();
             String userName = scnr.nextLine();
-            String finPassword = "Test";
+  
 
             Website website = new Website();
         
