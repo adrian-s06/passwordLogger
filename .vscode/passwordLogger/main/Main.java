@@ -57,12 +57,16 @@ public class Main{
         // prepping website instance
             Website website = new Website();
             
+            System.out.println("------------------------------------------------------------");
             System.out.println("Please enter the URL of the password menu of select website: ");
-            String url = scnr.nextLine();
+            
+            String url = scnr.next(); 
             website.setUrl(url);
-
+            
+            System.out.println("---------------------------------------------------------");
             System.out.println("Please enter your username/email for your select website:");
-            String userName = scnr.nextLine();
+            
+            String userName = scnr.next();
             website.setUsername(userName);
 
             website.setPassword(finPassword);
