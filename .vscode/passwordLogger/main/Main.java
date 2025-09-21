@@ -1,13 +1,18 @@
 package passwordLogger.main;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
+
 public class Main{
     
     @SuppressWarnings("ConvertToTryWithResources")
-    public static void main (String[] args) { 
+    public static void main (String[] args) throws IOException { 
         Scanner scnr = new Scanner(System.in);
         Random rand = new Random();
-        
+        FileOutputStream fileStream = new FileOutputStream("password.csv");
+        PrintWriter outFS = new PrintWriter(fileStream);
         /*
          * password must include the following:
          * Capital
@@ -72,7 +77,13 @@ public class Main{
             website.setPassword(finPassword);
         
             website.viewInfo();
+            //TODO: Add a while loop in case they want to change the url or username
+        
+        // adding to csv file
+            website.saveInfo(outFS);
+        
         
         scnr.close();
+        fileStream.close();
     }
 }

@@ -1,5 +1,5 @@
 package passwordLogger.main;
-
+import java.io.PrintWriter;
 public class Website {
       
     private String webUrl, webUsername, webPassword;
@@ -43,6 +43,9 @@ public class Website {
         System.out.printf("Url: %s\nUsername: %s\nPassword: %s ", webUrl, webUsername, webPassword);
        
     }
-   
+    
+    public void saveInfo(PrintWriter output) {
+        output.println("");
+    }
 
 }
