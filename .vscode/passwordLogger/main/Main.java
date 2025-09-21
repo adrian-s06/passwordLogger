@@ -50,17 +50,21 @@ public class Main{
 
         String finPassword = String.valueOf(password);
         System.out.println("The password that is generated is: " + finPassword);
-        // TODO: System.out.println("Do you wish to continue? Type Y or N to confirm:");
+
+        // TODO: Make an option to regenerate the password by nexting whole password creation process in a while loop
+        //System.out.println("Do you wish to continue? Type Y or N to confirm:"); 
 
         // prepping website instance
-            String url = scnr.nextLine();
-            String userName = scnr.nextLine();
-  
-
             Website website = new Website();
-        
+            
+            System.out.println("Please enter the URL of the password menu of select website: ");
+            String url = scnr.nextLine();
             website.setUrl(url);
+
+            System.out.println("Please enter your username/email for your select website:");
+            String userName = scnr.nextLine();
             website.setUsername(userName);
+
             website.setPassword(finPassword);
         
             website.viewInfo();
