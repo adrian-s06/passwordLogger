@@ -45,7 +45,9 @@ public class Website {
     }
     
     public void saveInfo(PrintWriter output) {
-        output.println("");
+        //format: "url","username","password","httpRealm","formActionOrigin","guid","timeCreated","timeLastUsed","timePasswordChanged"
+        output.println(""url","username","password","httpRealm","formActionOrigin","guid","timeCreated","timeLastUsed","timePasswordChanged"")
+        output.println("%s","");
     }
 
 }
