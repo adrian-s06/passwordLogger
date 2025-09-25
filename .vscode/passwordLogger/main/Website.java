@@ -44,10 +44,10 @@ public class Website {
        
     }
     
-    public void saveInfo(PrintWriter output) {
+    public void saveInfo(PrintWriter outFS) {
         //format: "url","username","password","httpRealm","formActionOrigin","guid","timeCreated","timeLastUsed","timePasswordChanged"
-        output.println(""url","username","password","httpRealm","formActionOrigin","guid","timeCreated","timeLastUsed","timePasswordChanged"")
-        output.println("%s","");
+        outFS.printf("\"url\",\"username\",\"password\",\"httpRealm\",\"formActionOrigin\",\"guid\",\"timeCreated\",\"timeLastUsed\",\"timePasswordChanged\"\n");
+        outFS.printf("\"%s\",\"%s\",\"%s\",\"%s\",\"formActionOrigin\",\"guid\",\"timeCreated\",\"timeLastUsed\",\"timePasswordChanged\"\n",webUrl,webUsername,webPassword,webUrl);
     }
 
 }

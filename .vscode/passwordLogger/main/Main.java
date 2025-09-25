@@ -84,6 +84,6 @@ public class Main{
         
         
         scnr.close();
-        fileStream.close();
+        outFS.close();
     }
 }
