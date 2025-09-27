@@ -20,44 +20,55 @@ public class Main{
          * number
          * symbol
         */
+        String finPassword = null;
+        char genPassword = 'Y';
 
-        //getting password length
-            System.out.println("Please enter the number of characters for your password (must be at least 4 characters):");
-        
-            int passLength = scnr.nextInt();
-            while (passLength < 4) {
-                System.out.println("------------------------------------------------------");
-                System.out.println("Invalid number of characters, please enter a number over 4");
-                passLength = scnr.nextInt();
-            }
-
-        //password generator
-            char[] password = new char[passLength];
+        while (genPassword == 'Y') {
+            //getting password length
+                System.out.println("Please enter the number of characters for your password (must be at least 4 characters):");
             
-            password[0] = (char) (rand.nextInt(26) + 63); // capital
-            password[1] = (char) (rand.nextInt(26) + 95); // lower case
-            password[2] = (char) (rand.nextInt(9) + 47);// number
-            password[3] = (char) (rand.nextInt(15) + 33); // symbol
+                int passLength = scnr.nextInt();
+                while (passLength < 4) {
+                    System.out.println("------------------------------------------------------");
+                    System.out.println("Invalid number of characters, please enter a number over 4");
+                    passLength = scnr.nextInt();
+                }
 
-            for (int i = 4; i < passLength; i++) {
-                password[i] = (char) (rand.nextInt(94) + 32);
-            }
-
-        //password randomiser
-            for (int i = 0; i < passLength; i++) {
-                char tempVal = password[i];
-                int randIndex = rand.nextInt(passLength);
-
-                password[i] = password[randIndex];
-                password[randIndex] = tempVal;
+            //password generator
+                char[] password = new char[passLength];
                 
-            }
+                password[0] = (char) (rand.nextInt(26) + 63); // capital
+                password[1] = (char) (rand.nextInt(26) + 95); // lower case
+                password[2] = (char) (rand.nextInt(9) + 47);// number
+                password[3] = (char) (rand.nextInt(15) + 33); // symbol
 
-        String finPassword = String.valueOf(password);
-        System.out.println("The password that is generated is: " + finPassword);
+                for (int i = 4; i < passLength; i++) {
+                    password[i] = (char) (rand.nextInt(94) + 32);
+                }
 
-        // TODO: Make an option to regenerate the password by nexting whole password creation process in a while loop
-        //System.out.println("Do you wish to continue? Type Y or N to confirm:"); 
+            //password randomiser
+                for (int i = 0; i < passLength; i++) {
+                    char tempVal = password[i];
+                    int randIndex = rand.nextInt(passLength);
+
+                    password[i] = password[randIndex];
+                    password[randIndex] = tempVal;
+                    
+                }
+
+            finPassword = String.valueOf(password);
+            System.out.println("The password that is generated is: " + finPassword);
+            
+            //Option to regenerate password of desired
+                System.out.println("------------------------------------------------");
+                System.out.println("Do you wish to re generate the password? Type Y or N to confirm:"); 
+                genPassword = scnr.next().charAt(0);
+            
+                while (genPassword != 'Y' && genPassword != 'N') {
+                    System.out.println("Please input either Y or N");
+                    genPassword = scnr.next().charAt(0);
+                }
+        }
 
         // prepping website instance
             Website website = new Website();
