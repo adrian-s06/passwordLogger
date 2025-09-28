@@ -69,10 +69,13 @@ public class Main{
                     genPassword = scnr.next().charAt(0);
                 }
         }
-
+        
+        
         // prepping website instance
             Website website = new Website();
-            
+
+        char createNewWebsite = 'Y';
+        while (createNewWebsite == 'Y') {        
             System.out.println("------------------------------------------------------------");
             System.out.println("Please enter the URL of the password menu of select website: ");
             
@@ -88,7 +91,16 @@ public class Main{
             website.setPassword(finPassword);
         
             website.viewInfo();
-            //TODO: Add a while loop in case they want to change the url or username
+            
+            System.out.println("Do you want to redo your Url or Username: Type Y or N ");
+            createNewWebsite = scnr.next().charAt(0);
+
+            while (createNewWebsite != 'Y' && createNewWebsite != 'N') {
+                System.out.println("Please input either Y or N");
+                createNewWebsite = scnr.next().charAt(0);
+            }
+        }
+        
         
         // adding to csv file
             website.saveInfo(outFS);
