@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList; 
 
 public class Main{
     
@@ -13,6 +14,7 @@ public class Main{
         Random rand = new Random();
         FileOutputStream fileStream = new FileOutputStream("password.csv");
         PrintWriter outFS = new PrintWriter(fileStream);
+        
         /*
          * password must include the following:
          * Capital
@@ -72,8 +74,9 @@ public class Main{
         
         
         // prepping website instance
+            ArrayList<Website> list = new ArrayList<>();
             Website website = new Website();
-
+            list.add(website);
         char createNewWebsite = 'Y';
         while (createNewWebsite == 'Y') {        
             System.out.println("------------------------------------------------------------");
@@ -103,8 +106,10 @@ public class Main{
         
         
         // adding to csv file
-            website.saveInfo(outFS);
-        
+            outFS.printf("\"url\",\"username\",\"password\",\"httpRealm\",\"formActionOrigin\",\"guid\",\"timeCreated\",\"timeLastUsed\",\"timePasswordChanged\"\n");
+            for (int i = 0; i < list.size(); i++) {
+                list.get(i).saveInfo(outFS);
+            }
         
         scnr.close();
         outFS.close();

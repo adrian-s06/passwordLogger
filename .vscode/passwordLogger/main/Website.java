@@ -52,7 +52,6 @@ public class Website {
     
     public void saveInfo(PrintWriter outFS) {
         //format: "url","username","password","httpRealm","formActionOrigin","guid","timeCreated","timeLastUsed","timePasswordChanged"
-        outFS.printf("\"url\",\"username\",\"password\",\"httpRealm\",\"formActionOrigin\",\"guid\",\"timeCreated\",\"timeLastUsed\",\"timePasswordChanged\"\n");
         outFS.printf("\"%s\",\"%s\",\"%s\",,\"%s\",\"%s\",\"%d\",\"%d\",\"%d\"\n", webUrl , webUsername , webPassword , webUrl, guid , currTime , currTime, currTime );
     }
 
