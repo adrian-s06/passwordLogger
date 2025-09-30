@@ -46,7 +46,7 @@ public class Website {
     public void viewInfo() {
         System.out.println("-----------------------------------");
         System.out.println("Here are the following details:");
-        System.out.printf("Url: %s\nUsername: %s\nPassword: %s\n ", webUrl, webUsername, webPassword);
+        System.out.printf("Url: %s\nUsername: %s\nPassword: %s\n", webUrl, webUsername, webPassword);
        
     }
     
